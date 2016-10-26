@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MobileSafe</string>
+    <string name="title_activity_homepage">HomepageActivity</string>
 </resources>
