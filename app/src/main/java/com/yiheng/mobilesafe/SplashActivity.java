@@ -34,9 +34,9 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        tv_version = (TextView) findViewById(R.id.tv_version);
         // 获取版本名字
         mVersionName = getVersionName();
+        tv_version = (TextView) findViewById(R.id.tv_version);
         tv_version.setText(mVersionName);
         checkVersion();
 
@@ -64,7 +64,6 @@ public class SplashActivity extends AppCompatActivity {
                     if (getVersionCode() < versionCode) {
                         shouUpdateDialog();
                     }else{
-
                         enterHomepage();
                     }
                 } catch (JSONException e) {
@@ -75,7 +74,7 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-
+                enterHomepage();
             }
 
             @Override
