@@ -8,6 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TitleBarStyle">
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">#399AD6</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>

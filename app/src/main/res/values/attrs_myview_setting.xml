@@ -1,0 +1,12 @@
+<resources>
+    <declare-styleable name="SettingItemView">
+        <attr name="tv_setting_title" format="string"/>
+        <attr name="tv_setting_enable" format="boolean"/>
+        <attr name="tv_setting_background">
+            <enum name="top" value="0"/>
+            <enum name="middle" value="1"/>
+            <enum name="bottom" value="2"/>
+        </attr>
+
+    </declare-styleable>
+</resources>

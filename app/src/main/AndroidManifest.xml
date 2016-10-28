@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".HomepageActivity">
         </activity>
+        <activity android:name=".SettingActivity">
+        </activity>
     </application>
 
 </manifest>
