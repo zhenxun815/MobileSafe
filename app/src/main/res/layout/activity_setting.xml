@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.yiheng.mobilesafe.SettingActivity">
+    tools:context="com.yiheng.mobilesafe.activity.SettingActivity">
 
     <TextView
         android:id="@+id/tv_setting_title_bar"

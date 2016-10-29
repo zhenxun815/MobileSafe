@@ -1,4 +1,4 @@
-package com.yiheng.mobilesafe;
+package com.yiheng.mobilesafe.activity;
 
 import android.app.Application;
 

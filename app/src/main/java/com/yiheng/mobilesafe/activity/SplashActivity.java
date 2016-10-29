@@ -1,4 +1,4 @@
-package com.yiheng.mobilesafe;
+package com.yiheng.mobilesafe.activity;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import com.yiheng.mobilesafe.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;

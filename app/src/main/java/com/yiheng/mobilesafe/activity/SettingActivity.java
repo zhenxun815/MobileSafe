@@ -1,9 +1,12 @@
-package com.yiheng.mobilesafe;
+package com.yiheng.mobilesafe.activity;
 
 import android.preference.Preference;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.yiheng.mobilesafe.R;
+import com.yiheng.mobilesafe.SettingItemView;
 
 public class SettingActivity extends AppCompatActivity implements View.OnClickListener{
 
