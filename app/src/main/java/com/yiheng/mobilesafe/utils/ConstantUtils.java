@@ -10,5 +10,8 @@ public interface ConstantUtils {
      */
 String AUTO_UPDATE = "auto_update";
 
-
+    /**
+     * 手机防盗密码
+     */
+    String SJFD_PSW = "sjfd_psw";
 }

@@ -22,6 +22,7 @@
         myview_setting:tv_setting_background="top"/>
 
     <com.yiheng.mobilesafe.SettingItemView
+        android:id="@+id/setting_blacklist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         myview_setting:tv_setting_background="middle"

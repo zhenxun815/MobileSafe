@@ -35,7 +35,7 @@ public class SettingItemView extends RelativeLayout {
         }
     }
 
-    private  void toogle(){
+    public void toogle(){
         setToogleOn(!isToogleOn);
     }
 

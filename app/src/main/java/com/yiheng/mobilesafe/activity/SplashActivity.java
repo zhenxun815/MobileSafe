@@ -9,10 +9,13 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.yiheng.mobilesafe.R;
+import com.yiheng.mobilesafe.utils.ConstantUtils;
+import com.yiheng.mobilesafe.utils.SharedPreferenceUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,7 +43,20 @@ public class SplashActivity extends AppCompatActivity {
         mVersionName = getVersionName();
         tv_version = (TextView) findViewById(R.id.tv_version);
         tv_version.setText(mVersionName);
-        checkVersion();
+
+        //设置延时
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Boolean isAutoUpdate = SharedPreferenceUtils
+                        .getBoolean(getApplicationContext(), ConstantUtils.AUTO_UPDATE, true);
+                if (isAutoUpdate) {
+                    checkVersion();
+                } else {
+                    enterHomepage();
+                }
+            }
+        }, 2000);
 
 
     }
@@ -57,15 +73,15 @@ public class SplashActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(result);
                     int versionCode = jsonObject.getInt("versionCode");
-                    System.out.println(versionCode+"___________________________");
-                    System.out.println(getVersionCode()+"___________________________");
+                    //System.out.println(versionCode+"___________________________");
+                    //System.out.println(getVersionCode()+"___________________________");
                     versionName = jsonObject.getString("versionName");
                     mDesc = jsonObject.getString("desc");
                     downloadurl = jsonObject.getString("downloadurl");
 
                     if (getVersionCode() < versionCode) {
                         shouUpdateDialog();
-                    }else{
+                    } else {
                         enterHomepage();
                     }
                 } catch (JSONException e) {
@@ -131,9 +147,9 @@ public class SplashActivity extends AppCompatActivity {
         }
         //下载
         RequestParams params = new RequestParams(downloadurl);
-        System.out.println("_____________"+downloadurl);
-        params.setSaveFilePath(Environment.getExternalStorageDirectory()+"/mobilesafe.apk");
-        System.out.println(Environment.getExternalStorageDirectory()+"mobilesafe.apk");
+        System.out.println("_____________" + downloadurl);
+        params.setSaveFilePath(Environment.getExternalStorageDirectory() + "/mobilesafe.apk");
+        System.out.println(Environment.getExternalStorageDirectory() + "mobilesafe.apk");
         params.setAutoRename(true);
         x.http().get(params, new Callback.ProgressCallback<File>() {
 
@@ -181,7 +197,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
 
-               // Toast.makeText(getApplicationContext(), "下载失败", Toast.LENGTH_LONG).show();
+                // Toast.makeText(getApplicationContext(), "下载失败", Toast.LENGTH_LONG).show();
                 System.out.println("_________________________________error");
                 enterHomepage();
 

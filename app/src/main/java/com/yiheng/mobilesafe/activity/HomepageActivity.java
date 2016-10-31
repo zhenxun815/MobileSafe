@@ -5,14 +5,18 @@ import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.yiheng.mobilesafe.R;
+import com.yiheng.mobilesafe.utils.ConstantUtils;
+import com.yiheng.mobilesafe.utils.SharedPreferenceUtils;
 
 public class HomepageActivity extends AppCompatActivity {
 
@@ -44,7 +48,48 @@ public class HomepageActivity extends AppCompatActivity {
         animator.start();
 
         gv_homepage.setAdapter(new MyAdaptor());
+        gv_homepage.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        sjfd();//手机防盗item
+                        break;
+                    case 1:
 
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                    case 5:
+
+                        break;
+                    case 6:
+
+                        break;
+                    case 7:
+
+                        break;
+                }
+            }
+        });
+
+    }
+
+    private void sjfd() {
+        String psw = SharedPreferenceUtils
+                .getString(getApplicationContext(), ConstantUtils.SJFD_PSW,null);
+        if (TextUtils.isEmpty(psw)){
+
+        }else{
+
+        }
     }
 
     public void setting(View view) {
