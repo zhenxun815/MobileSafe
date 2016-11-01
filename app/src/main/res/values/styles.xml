@@ -7,7 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <!--页面titlebar-->
     <style name="TitleBarStyle">
         <item name="android:textSize">25sp</item>
         <item name="android:layout_height">50dp</item>
@@ -16,7 +16,39 @@
         <item name="android:textColor">#fff</item>
         <item name="android:gravity">center</item>
     </style>
-
+    <!--手机防盗设置页面一item-->
+    <style name="SJFDSettingitem">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:drawableLeft">@drawable/dialog_title_default_icon</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+<!--下一步-->
+    <style name="NextStep">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:text">下一步</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:drawableRight">@drawable/next</item>
+        <item name="android:background">@drawable/dialog_btn_confirm_selector</item>
+    </style>
+    <!--上一步-->
+    <style name="PreStep">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:text">上一步</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:drawableLeft">@drawable/pre</item>
+        <item name="android:background">@drawable/dialog_btn_confirm_selector</item>
+    </style>
     <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>

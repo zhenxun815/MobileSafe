@@ -2,6 +2,7 @@ package com.yiheng.mobilesafe.activity;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,9 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.yiheng.mobilesafe.R;
 import com.yiheng.mobilesafe.utils.ConstantUtils;
@@ -83,17 +87,96 @@ public class HomepageActivity extends AppCompatActivity {
     }
 
     private void sjfd() {
-        String psw = SharedPreferenceUtils
-                .getString(getApplicationContext(), ConstantUtils.SJFD_PSW,null);
-        if (TextUtils.isEmpty(psw)){
+        final String psw = SharedPreferenceUtils
+                .getString(getApplicationContext(), ConstantUtils.SJFD_PSW, null);
 
-        }else{
+        //未设置防盗密码,设置密码,并进入手机防盗设置一界面
+        if (TextUtils.isEmpty(psw)) {
+            // 设置手机防盗密码
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            View view = View.inflate(this, R.layout.dialog_initpsw_layout, null);
+            builder.setView(view);
+            final AlertDialog dialog = builder.create();
 
+            //findViewById前记得写成view.findViewById
+            final EditText et_dialog_initpsw_psw1 = (EditText) view.findViewById(R.id.et_dialog_initpsw_psw1);
+            final EditText et_dialog_initpsw_psw2 = (EditText) view.findViewById(R.id.et_dialog_initpsw_psw2);
+            final Button btn_dialog_initpsw_confirm =
+                    (Button) view.findViewById(R.id.btn_dialog_initpsw_confirm);
+            final Button btn_dialog_initpsw_concel =
+                    (Button) view.findViewById(R.id.btn_dialog_initpsw_concel);
+
+
+            btn_dialog_initpsw_confirm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String psw1 = et_dialog_initpsw_psw1.getText().toString().trim();
+                    String psw2 = et_dialog_initpsw_psw2.getText().toString().trim();
+
+                    if (TextUtils.equals(psw1, psw2) && !TextUtils.isEmpty(psw1)) {
+                        SharedPreferenceUtils.
+                                putString(getApplicationContext(), ConstantUtils.SJFD_PSW, psw1);
+                        //进入手机防盗设置页面内一
+                        startActivity(new Intent(getApplicationContext(), SJFDSetting1Activity.class));
+                        dialog.dismiss();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "两次密码不一致或密码为空", Toast.LENGTH_LONG);
+
+                    }
+                }
+            });
+
+            btn_dialog_initpsw_concel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                }
+            });
+            dialog.show();
+
+            //已设置防盗密码,输入密码后检测是否完成手机防盗设置,如果完成设置,直接进入手机防盗主页面,否则进入手机防盗设置一界面
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            View view = View.inflate(this, R.layout.dialog_enterpsw_layout, null);
+            builder.setView(view);
+            final AlertDialog dialog = builder.create();
+
+            final EditText et_dialog_enterpsw = (EditText) view.findViewById(R.id.et_dialog_enterpsw);
+            final Button btn_dialog_confirm = (Button) view.findViewById(R.id.btn_dialog_enterpsw_confirm);
+            final Button btn_dialog_concel = (Button) view.findViewById(R.id.btn_dialog_enterpsw_concel);
+
+            btn_dialog_confirm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String psw0 = et_dialog_enterpsw.getText().toString().trim();
+                    if (TextUtils.equals(psw, psw0)) {
+                        Boolean isSJFDSetting = SharedPreferenceUtils
+                                .getBoolean(getApplicationContext(), ConstantUtils.IS_SJFD_SETTING, false);
+                        if (isSJFDSetting) {
+                            startActivity(new Intent(getApplicationContext(), SJFDActivity.class));
+                        } else {
+                            startActivity(new Intent(getApplicationContext(), SJFDSetting1Activity.class));
+                        }
+                        dialog.dismiss();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "密码错误", Toast.LENGTH_LONG);
+                    }
+                }
+            });
+
+            btn_dialog_concel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                }
+            });
+
+            dialog.show();
         }
     }
 
     public void setting(View view) {
-        startActivity(new Intent(getApplicationContext(),SettingActivity.class));
+        startActivity(new Intent(getApplicationContext(), SettingActivity.class));
 
     }
 
@@ -133,8 +216,6 @@ public class HomepageActivity extends AppCompatActivity {
             viewHolder.tv_homepage_item_desc.setText(OPTION_DEC[position]);
             return convertView;
         }
-
-
     }
 
     private static class HomepageItemViewHolder {

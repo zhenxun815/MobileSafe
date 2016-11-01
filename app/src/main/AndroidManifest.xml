@@ -23,6 +23,17 @@
         </activity>
         <activity android:name=".activity.SettingActivity">
         </activity>
+        <activity
+            android:name=".activity.SJFDBaseActivity"
+            android:label="@string/title_activity_sjfdbase"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity android:name=".activity.SJFDSetting1Activity">
+        </activity>
+        <activity android:name=".activity.SJFDSetting2Activity">
+        </activity>
+        <activity android:name=".activity.SJFDActivity">
+        </activity>
     </application>
 
 </manifest>
