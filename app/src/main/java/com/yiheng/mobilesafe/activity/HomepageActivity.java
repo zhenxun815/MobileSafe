@@ -120,7 +120,7 @@ public class HomepageActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), SJFDSetting1Activity.class));
                         dialog.dismiss();
                     } else {
-                        Toast.makeText(getApplicationContext(), "两次密码不一致或密码为空", Toast.LENGTH_LONG);
+                        Toast.makeText(getApplicationContext(), "两次密码不一致或密码为空", Toast.LENGTH_LONG).show();
 
                     }
                 }
@@ -159,7 +159,7 @@ public class HomepageActivity extends AppCompatActivity {
                         }
                         dialog.dismiss();
                     } else {
-                        Toast.makeText(getApplicationContext(), "密码错误", Toast.LENGTH_LONG);
+                        Toast.makeText(getApplicationContext(), "密码错误", Toast.LENGTH_LONG).show();
                     }
                 }
             });

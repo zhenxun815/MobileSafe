@@ -18,4 +18,8 @@ String AUTO_UPDATE = "auto_update";
      * 手机防盗设置完成
      */
     String IS_SJFD_SETTING = "is_sjfd_setting";
+    /**
+     * 手机防盗状态:是否绑定SIM卡
+     */
+    String SIM_NUM = "is_sim_bind";
 }
