@@ -25,15 +25,23 @@
         android:id="@+id/setting_blacklist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        myview_setting:tv_setting_background="middle"
+        myview_setting:tv_setting_background="bottom"
         myview_setting:tv_setting_title="骚然拦截设置"
         myview_setting:tv_setting_enable="true"/>
 
     <com.yiheng.mobilesafe.SettingItemView
+        android:layout_marginTop="50dp"
+        android:id="@+id/setting_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        myview_setting:tv_setting_background="top"
+        myview_setting:tv_setting_title="归属地显示设置"
+        myview_setting:tv_setting_enable="true"/>
+    <com.yiheng.mobilesafe.SettingItemView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         myview_setting:tv_setting_background="bottom"
-        myview_setting:tv_setting_title="归属地显示设置"
+        myview_setting:tv_setting_title="归属地风格设置"
         myview_setting:tv_setting_enable="false"/>
 
 

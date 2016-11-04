@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/TitleBarStyle"
+            android:text="黑名单管理"/>
+
+        <ImageView
+            android:id="@+id/iv_srlj_add_forbidden"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="6dp"
+            android:src="@drawable/add_forbiden_selector"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/lv_srlj_forbiddons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
+        <ImageView
+            android:id="@+id/iv_srlj_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/empty"
+            android:visibility="invisible"/>
+        <ProgressBar
+            android:id="@+id/pbr_srlj"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateDrawable="@anim/progress_medium"
+            android:indeterminateDuration="200"/>
+
+    </FrameLayout>
+
+</LinearLayout>

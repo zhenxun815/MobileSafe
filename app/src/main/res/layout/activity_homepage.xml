@@ -9,13 +9,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="160dp"
         android:background="@drawable/blue_bkg">
 
         <ImageView
             android:id="@+id/iv_homepage_heima"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:src="@drawable/heima"/>
@@ -53,22 +53,24 @@
         </LinearLayout>
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentRight="true"
-            android:layout_margin="3dp"
+            android:layout_margin="8dp"
             android:background="@drawable/setting_selector"
-            android:src="@drawable/setting"
-            android:onClick="setting"/>
+            android:onClick="setting"
+            android:src="@drawable/setting"/>
 
     </RelativeLayout>
+
     <GridView
-        android:layout_width="match_parent"
         android:id="@+id/gv_homepage"
-        android:verticalSpacing="2dp"
-        android:horizontalSpacing="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:horizontalSpacing="8dp"
         android:numColumns="2"
-        android:layout_height="match_parent">
+        android:verticalSpacing="10dp">
 
     </GridView>
 

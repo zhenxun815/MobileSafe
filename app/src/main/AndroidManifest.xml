@@ -11,7 +11,7 @@
     <application
         android:name=".activity.MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -40,18 +40,30 @@
         </activity>
         <activity android:name=".activity.ContactsSelectActivity">
         </activity>
-        <receiver android:name=".receiver.AdminReceiver"
-                  android:label="@string/device_admin_sample_lable"
-                  android:description="@string/device_admin_sample_description"
-                  android:permission="android.permission.BIND_DEVICE_ADMIN">
+
+        <receiver
+            android:name=".receiver.AdminReceiver"
+            android:description="@string/device_admin_sample_description"
+            android:label="@string/device_admin_sample_lable"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
             <meta-data
                 android:name="android.app.device_admin"
-                android:resource="@xml/device_admin_sample" />
+                android:resource="@xml/device_admin_sample"/>
+
             <intent-filter>
-                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
             </intent-filter>
         </receiver>
+        <receiver
+            android:name=".receiver.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+        </receiver>
 
+        <activity android:name=".activity.SRLJEditActivity">
+        </activity>
+        <activity android:name=".activity.SRLJAddActivity">
+        </activity>
     </application>
 
 </manifest>
