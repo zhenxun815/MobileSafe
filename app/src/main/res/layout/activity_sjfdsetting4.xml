@@ -24,6 +24,7 @@
         android:layout_margin="10dp"/>
 
     <RelativeLayout
+        android:id="@+id/rl_sjbd_setting4_acti_admin"
         android:layout_width="match_parent"
         android:background="@drawable/dialog_btn_confirm_selector"
         android:layout_height="wrap_content"
@@ -33,9 +34,10 @@
             android:layout_height="wrap_content"
             android:text="点击激活/取消激活设备管理员"
             android:textColor="#fff"
-            android:textSize="23sp"
+            android:textSize="18sp"
             android:layout_centerVertical="true"/>
         <ImageView
+            android:id="@+id/iv_sjfd_acti_admin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -60,6 +62,10 @@
             android:orientation="horizontal"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/presence_invisible"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

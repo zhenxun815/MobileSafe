@@ -2,44 +2,52 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.yiheng.mobilesafe.activity.SJFDActivity">
+
     <TextView
         style="@style/TitleBarStyle"
         android:text="手机防盗"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="安全号码"
             android:textSize="23sp"/>
+
         <TextView
+            android:id="@+id/tv_sjfd_saffenum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:id="@+id/tv_sjfd_saffenum"
             android:text="111"
             android:textSize="23sp"/>
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#000"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:text="防盗是否开启"
             android:textSize="23sp"/>
+
         <ImageView
             android:id="@+id/iv_sjfd_islock"
             android:layout_width="wrap_content"
@@ -47,56 +55,63 @@
             android:layout_alignParentRight="true"
             android:src="@drawable/lock"/>
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#000"/>
+
     <TextView
+        android:id="@+id/tv_sjfd_reset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:id="@+id/tv_sjfd_to_sjfdsetting"
         android:text="重新进入设置向导页面"
         android:textSize="23sp"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#555"
+        android:padding="10dp"
         android:text="功能介绍"
         android:textColor="#fff"
-        android:textSize="23sp"
-        android:background="#555"
-        android:padding="10dp"/>
+        android:textSize="23sp"/>
+
     <TextView
-        android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:drawableLeft="@drawable/dialog_title_default_icon"
+        android:gravity="center_vertical"
         android:text="GPS追踪:#*location*#"
-        android:textSize="23sp"
-        android:gravity="center_vertical"/>
+        android:textSize="23sp"/>
+
     <TextView
-        android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:drawableLeft="@drawable/dialog_title_default_icon"
+        android:gravity="center_vertical"
         android:text="远程销毁数据:#*wipedatan*#"
-        android:textSize="23sp"
-        android:gravity="center_vertical"/>
+        android:textSize="23sp"/>
+
     <TextView
-        android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:drawableLeft="@drawable/dialog_title_default_icon"
+        android:gravity="center_vertical"
         android:text="播放报警音乐:#*alarm*#"
-        android:textSize="23sp"
-        android:gravity="center_vertical"/>
+        android:textSize="23sp"/>
+
     <TextView
-        android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:drawableLeft="@drawable/dialog_title_default_icon"
+        android:gravity="center_vertical"
         android:text="远程锁屏:#*lockscreen*#"
-        android:textSize="23sp"
-        android:gravity="center_vertical"/>
+        android:textSize="23sp"/>
 
 </LinearLayout>

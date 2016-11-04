@@ -7,7 +7,7 @@
         style="@style/TitleBarStyle"
         android:text="恭喜您!设置完成"/>
     <CheckBox
-        android:id="@+id/chb_opensjfd"
+        android:id="@+id/cbx_opensjfd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="选中开启防盗保护"/>
@@ -37,18 +37,24 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@android:drawable/presence_online"/>
+                android:src="@android:drawable/presence_invisible"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@android:drawable/presence_invisible"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/presence_online"/>
+
         </LinearLayout>
         <Button
             android:id="@+id/btn_sjfd_setting5_pre"
             style="@style/PreStep"/>
         <Button
             android:id="@+id/btn_sjfd_setting5_next"
-            style="@style/NextStep"/>
+            style="@style/NextStep"
+            android:text="设置完成"/>
 
     </RelativeLayout>
 

@@ -21,6 +21,7 @@ public class SJFDSetting2Activity extends SJFDBaseActivity {
     private RelativeLayout rl_sjbd_setting2_bindsim;
     private ImageView iv_sjfd_simbind;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,19 +45,36 @@ public class SJFDSetting2Activity extends SJFDBaseActivity {
             }
         });
 
+        String simNUm = SharedPreferenceUtils
+                .getString(getApplicationContext(), ConstantUtils.SIM_NUM, null);
+
         rl_sjbd_setting2_bindsim = (RelativeLayout) findViewById(R.id.rl_sjbd_setting2_bindsim);
         iv_sjfd_simbind = (ImageView) findViewById(R.id.iv_sjfd_simbind);
 
-        String simNUm = SharedPreferenceUtils
-                .getString(getApplicationContext(), ConstantUtils.SIM_NUM, null);
+        if (TextUtils.isEmpty(simNUm)) {
+            iv_sjfd_simbind.setImageResource(R.drawable.unlock);
+        } else if (!TextUtils.isEmpty(simNUm)){
+            iv_sjfd_simbind.setImageResource(R.drawable.lock);
+        }
+
+
 
         rl_sjbd_setting2_bindsim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // 绑定SIM卡,获取SIM卡序列号
                 TelephonyManager tm = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-                SharedPreferenceUtils.
-                        putString(getApplicationContext(),ConstantUtils.SIM_NUM,tm.getSimSerialNumber());
+                String simNUm = SharedPreferenceUtils
+                        .getString(getApplicationContext(), ConstantUtils.SIM_NUM, null);
+                if (TextUtils.isEmpty(simNUm)) {
+                    SharedPreferenceUtils.
+                            putString(getApplicationContext(),ConstantUtils.SIM_NUM,tm.getSimSerialNumber());
+                    iv_sjfd_simbind.setImageResource(R.drawable.lock);
+                } else if (!TextUtils.isEmpty(simNUm)){
+                    SharedPreferenceUtils
+                            .putString(getApplicationContext(),ConstantUtils.SIM_NUM,"");
+                    iv_sjfd_simbind.setImageResource(R.drawable.unlock);
+                }
 
             }
         });

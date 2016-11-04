@@ -23,12 +23,14 @@
         android:textSize="23sp"
         android:layout_margin="10dp"/>
     <EditText
+        android:id="@+id/et_sjfd_setting3_safenumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:hint="请输入安全号码"
         android:textSize="23sp"/>
     <Button
+        android:id="@+id/btn_sjfd_setting3_select_safenum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="请选择安全号码"
@@ -64,6 +66,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@android:drawable/presence_online"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/presence_invisible"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

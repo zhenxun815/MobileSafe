@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yiheng.mobilesafe.activity.ContactsSelectActivity">
+
+    <TextView
+        android:id="@+id/tv_contacts_select_title"
+        style="@style/TitleBarStyle"
+        android:text="选择联系人"/>
+
+    <ListView
+        android:id="@+id/lv_contacts_select"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_contacts_select_title"
+        android:layout_margin="10dp"></ListView>
+
+    <include
+        layout="@layout/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+
+</RelativeLayout>

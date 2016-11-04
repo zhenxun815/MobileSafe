@@ -32,7 +32,7 @@
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:text">下一步</item>
-        <item name="android:textSize">25sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textColor">#fff</item>
         <item name="android:drawableRight">@drawable/next</item>
         <item name="android:background">@drawable/dialog_btn_confirm_selector</item>
@@ -44,7 +44,7 @@
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_alignParentLeft">true</item>
         <item name="android:text">上一步</item>
-        <item name="android:textSize">25sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textColor">#fff</item>
         <item name="android:drawableLeft">@drawable/pre</item>
         <item name="android:background">@drawable/dialog_btn_confirm_selector</item>
