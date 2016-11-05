@@ -28,7 +28,7 @@
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/iv_delet_forbidden"
+        android:id="@+id/iv_srlj_delet_forbidden"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

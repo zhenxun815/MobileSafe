@@ -60,9 +60,9 @@
             android:exported="true">
         </receiver>
 
-        <activity android:name=".activity.SRLJEditActivity">
+        <activity android:name=".activity.SRLJActivity">
         </activity>
-        <activity android:name=".activity.SRLJAddActivity">
+        <activity android:name=".activity.SRLJEditActivity">
         </activity>
     </application>
 

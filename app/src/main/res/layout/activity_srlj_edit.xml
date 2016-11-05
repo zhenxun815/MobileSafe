@@ -1,51 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.yiheng.mobilesafe.activity.SRLJEditActivity">
+
+    <TextView
+        android:id="@+id/tv_srlj_edit_title"
+        style="@style/TitleBarStyle"
+        android:text="更新黑名单"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="电话号码"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/et_srlj_edit_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/et_bg_srlj_add_shape"
+        android:hint="114"
+        android:padding="4dp"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="拦截类型"
+        android:textSize="20sp"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbt_srlj_edit_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="电话"
+            android:textSize="20sp"/>
+
+        <RadioButton
+            android:id="@+id/rbt_srlj_edit_sms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="短信"
+            android:textSize="20sp"/>
+
+        <RadioButton
+            android:id="@+id/rbt_srlj_edit_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="全部"
+            android:textSize="20sp"/>
+    </RadioGroup>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            style="@style/TitleBarStyle"
-            android:text="黑名单管理"/>
-
-        <ImageView
-            android:id="@+id/iv_srlj_add_forbidden"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="6dp"
-            android:src="@drawable/add_forbiden_selector"/>
-    </RelativeLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <ListView
-            android:id="@+id/lv_srlj_forbiddons"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </ListView>
-        <ImageView
-            android:id="@+id/iv_srlj_empty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/empty"
-            android:visibility="invisible"/>
-        <ProgressBar
-            android:id="@+id/pbr_srlj"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:indeterminateDrawable="@anim/progress_medium"
-            android:indeterminateDuration="200"/>
 
-    </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_srlj_edit_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/dg_btn_confirm_select"
+                android:text="确认"
+                android:textColor="#fff"
+                android:textSize="20sp"/>
+
+            <Button
+                android:id="@+id/btn_srlj_edit_concel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/dg_btn_cancel_select"
+                android:text="取消"
+                android:textSize="20sp"/>
+        </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>
