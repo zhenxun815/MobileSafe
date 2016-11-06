@@ -16,11 +16,15 @@ import android.telephony.SmsMessage;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
+import com.android.internal.telephony.ITelephony;
 import com.yiheng.mobilesafe.bean.ForbiddenInfo;
 import com.yiheng.mobilesafe.db.ForbiddenDAO;
 
+import java.lang.reflect.Method;
+
 public class CallSMSService extends Service {
     private ForbiddenDAO forbiddenDAO;
+    private TelephonyManager manager;
 
     public CallSMSService() {
     }
@@ -33,6 +37,21 @@ public class CallSMSService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        forbiddenDAO = new ForbiddenDAO(getApplicationContext());
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("android.provider.Telephony.SMS_RECEIVED");// 短信广播的action
+        filter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);
+        registerReceiver(mBroadcastReceiver, filter);
+
+        manager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        manager.listen(listener, PhoneStateListener.LISTEN_CALL_STATE);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(mBroadcastReceiver);
+        manager.listen(listener, PhoneStateListener.LISTEN_NONE);
     }
 
     //拦截短信
@@ -117,6 +136,19 @@ public class CallSMSService extends Service {
     };
 
     private void endcall() {
-        // TODO: 2016/11/6 0006
+        try {
+            // 参1 方法名字 参2 方法里参数的类型
+            Method declaredMethod = manager.getClass().getDeclaredMethod(
+                    "getITelephony", (Class<?>) null);
+            declaredMethod.setAccessible(true);// 设置私有方法可以访问
+            // 参1调用的方法的对象
+
+           ITelephony telephony = (ITelephony) declaredMethod.invoke(manager, null);
+            // 挂断电话 <uses-permission
+            // android:name="android.permission.CALL_PHONE" />
+            telephony.endCall();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
