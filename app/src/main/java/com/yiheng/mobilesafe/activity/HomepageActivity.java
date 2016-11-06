@@ -59,7 +59,7 @@ public class HomepageActivity extends AppCompatActivity {
                     case 0:
                         sjfd();//手机防盗item
                         break;
-                    case 1://骚然拦截
+                    case 1://骚扰拦截
                         startActivity(new Intent(getApplicationContext(), SRLJActivity.class));
                         break;
                     case 2:

@@ -1,5 +1,6 @@
 package com.yiheng.mobilesafe.activity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -49,6 +50,8 @@ public abstract class SJFDBaseActivity extends AppCompatActivity {
                         return super.onFling(e1, e2, velocityX, velocityY);
                     }
                 });
+
+
 
     }
 

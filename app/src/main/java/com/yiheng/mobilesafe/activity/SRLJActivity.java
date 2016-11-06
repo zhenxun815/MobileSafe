@@ -178,7 +178,7 @@ public class SRLJActivity extends AppCompatActivity {
                 case ForbiddenInfo.TYPE_ALL:
                     viewHolder.tv_srlj_forbidden_type.setText("电话+短信");
                     break;
-                case ForbiddenInfo.TYPE_NUMBER:
+                case ForbiddenInfo.TYPE_CALL:
                     viewHolder.tv_srlj_forbidden_type.setText("电话");
                     break;
                 case ForbiddenInfo.TYPE_SMS:

@@ -32,7 +32,7 @@
                 android:id="@+id/tv_homepage_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="黑马安全卫士"
+                android:text="屌丝安全卫士"
                 android:textColor="#fff"
                 android:textSize="19sp"
                 android:textStyle="bold"/>
@@ -47,7 +47,7 @@
                 android:focusableInTouchMode="true"
                 android:marqueeRepeatLimit="marquee_forever"
                 android:singleLine="true"
-                android:text="黑马安全卫士,时刻保护您的手机安全,黑马安全卫士,时刻保护您的手机安全"
+                android:text="屌丝安全卫士,时刻保护您的手机安全,屌丝安全卫士,时刻保护您的手机安全"
                 android:textColor="#fff"
                 android:textSize="15sp"/>
         </LinearLayout>
@@ -70,9 +70,9 @@
         android:layout_height="match_parent"
         android:horizontalSpacing="8dp"
         android:numColumns="2"
-        android:verticalSpacing="10dp">
+        android:verticalSpacing="10dp"/>
 
-    </GridView>
+
 
 
 </LinearLayout>

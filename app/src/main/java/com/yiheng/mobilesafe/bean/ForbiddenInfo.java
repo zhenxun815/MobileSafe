@@ -6,7 +6,7 @@ package com.yiheng.mobilesafe.bean;
 
 public class ForbiddenInfo {
     public static final int TYPE_NONE = 0;
-    public static final int TYPE_NUMBER = 1;
+    public static final int TYPE_CALL = 1;
     public static final int TYPE_SMS = 2;
     public static final int TYPE_ALL = 3;
 

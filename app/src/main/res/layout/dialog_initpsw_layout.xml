@@ -49,7 +49,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_stlj_edit_confirm"
+            android:id="@+id/btn_dialog_initpsw_confirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
@@ -60,7 +60,7 @@
             android:textSize="20sp"/>
 
         <Button
-            android:id="@+id/btn_srlj_edit_concel"
+            android:id="@+id/btn_dialog_initpsw_concel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
