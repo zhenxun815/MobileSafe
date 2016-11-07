@@ -55,6 +55,7 @@ public class CallSMSService extends Service {
     }
 
     //拦截短信
+    //Android 4.4之后只允许默认短信应用接收处理短信,如果不设置为默认短信应用无法拦截短信
     //通过SMS_RECEIVED_ACTION intent获取短信,通过短信识别发短信的号码,对比屏蔽号码数据库,确定是否拦截
 
     private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
@@ -101,7 +102,9 @@ public class CallSMSService extends Service {
         @Override
         public void onCallStateChanged(int state, final String incomingNumber) {
             super.onCallStateChanged(state, incomingNumber);
-            if (TelephonyManager.CALL_STATE_IDLE==state){
+
+            if (TelephonyManager.CALL_STATE_RINGING==state){
+                System.out.println("++++++++++++++++++++++++ringing+++++++++++++++++++++++++");
                 int type = forbiddenDAO.queryType(incomingNumber);
                 if (ForbiddenInfo.TYPE_ALL == type || ForbiddenInfo.TYPE_CALL == type){
                     endcall();
@@ -137,15 +140,12 @@ public class CallSMSService extends Service {
 
     private void endcall() {
         try {
-            // 参1 方法名字 参2 方法里参数的类型
+            System.out.println("+++++++++++++++++++ endCall +++++++++++++++++++");
             Method declaredMethod = manager.getClass().getDeclaredMethod(
-                    "getITelephony", (Class<?>) null);
+                    "getITelephony",  (Class<?>[]) null);
             declaredMethod.setAccessible(true);// 设置私有方法可以访问
-            // 参1调用的方法的对象
 
-           ITelephony telephony = (ITelephony) declaredMethod.invoke(manager, null);
-            // 挂断电话 <uses-permission
-            // android:name="android.permission.CALL_PHONE" />
+           ITelephony telephony = (ITelephony) declaredMethod.invoke(manager, (Object[]) null);
             telephony.endCall();
         } catch (Exception e) {
             e.printStackTrace();

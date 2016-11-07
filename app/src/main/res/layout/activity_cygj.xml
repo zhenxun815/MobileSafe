@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myview_setting="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yiheng.mobilesafe.activity.CYGJActivity">
+
+    <TextView
+        android:id="@+id/tv_setting_title_bar"
+        style="@style/TitleBarStyle"
+        android:text="常用工具"/>
+
+    <com.yiheng.mobilesafe.SettingItemView
+        android:id="@+id/tools_query_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        myview_setting:tv_setting_background="top"
+        myview_setting:tv_setting_enable="false"
+        myview_setting:tv_setting_title="号码归属地查询"/>
+
+    <com.yiheng.mobilesafe.SettingItemView
+        android:id="@+id/tools_query_numbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        myview_setting:tv_setting_background="bottom"
+        myview_setting:tv_setting_enable="false"
+        myview_setting:tv_setting_title="常用号码查询"/>
+
+    <com.yiheng.mobilesafe.SettingItemView
+        android:id="@+id/tools_sms_backup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        myview_setting:tv_setting_background="top"
+        myview_setting:tv_setting_enable="false"
+        myview_setting:tv_setting_title="短信备份"/>
+
+    <com.yiheng.mobilesafe.SettingItemView
+        android:id="@+id/tools_sms_restore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        myview_setting:tv_setting_background="bottom"
+        myview_setting:tv_setting_enable="false"
+        myview_setting:tv_setting_title="短信还原"/>
+
+    <com.yiheng.mobilesafe.SettingItemView
+        android:id="@+id/tools_app_lock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        myview_setting:tv_setting_background="top"
+        myview_setting:tv_setting_enable="false"
+        myview_setting:tv_setting_title="程序管理"/>
+
+    <com.yiheng.mobilesafe.SettingItemView
+        android:id="@+id/tools_dog1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        myview_setting:tv_setting_background="middle"
+        myview_setting:tv_setting_enable="true"
+        myview_setting:tv_setting_title="开启电子狗服务1"/>
+
+    <com.yiheng.mobilesafe.SettingItemView
+        android:id="@+id/tools_dog2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        myview_setting:tv_setting_background="bottom"
+        myview_setting:tv_setting_enable="true"
+        myview_setting:tv_setting_title="开启电子狗服务2"/>
+
+</LinearLayout>

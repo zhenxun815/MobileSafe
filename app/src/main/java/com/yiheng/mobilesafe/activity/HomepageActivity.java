@@ -78,7 +78,7 @@ public class HomepageActivity extends AppCompatActivity {
 
                         break;
                     case 7:
-
+                        startActivity(new Intent(getApplicationContext(), CYGJActivity.class));
                         break;
                 }
             }

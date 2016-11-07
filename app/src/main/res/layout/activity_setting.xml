@@ -22,11 +22,11 @@
         myview_setting:tv_setting_background="top"/>
 
     <com.yiheng.mobilesafe.SettingItemView
-        android:id="@+id/setting_blacklist"
+        android:id="@+id/setting_forbiddenlist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         myview_setting:tv_setting_background="bottom"
-        myview_setting:tv_setting_title="骚然拦截设置"
+        myview_setting:tv_setting_title="骚扰拦截设置"
         myview_setting:tv_setting_enable="true"/>
 
     <com.yiheng.mobilesafe.SettingItemView

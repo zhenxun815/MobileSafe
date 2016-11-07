@@ -35,6 +35,7 @@ public interface ConstantUtils {
      * 手机防盗:是否开启保护
      */
     String SJFD_SET_ON = "sjfd_set_on";
+
     /**
      * 骚然拦截:意图传递的列表索引位置
      */
