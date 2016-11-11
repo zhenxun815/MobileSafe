@@ -12,13 +12,13 @@ public class ApplockDBHelper extends SQLiteOpenHelper {
 
     public ApplockDBHelper(Context context) {
         super(context, ApplockDBConstants.DB_NAME, null, ApplockDBConstants.DB_VERSION);
-        System.out.println("----------------- ApplockDBHelper -----------------");
+       // System.out.println("----------------- ApplockDBHelper -----------------");
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(ApplockDBConstants.TABLE_CREATE);
-        System.out.println("----------------- ApplockDBConstants.TABLE_CREATE -----------------");
+       // System.out.println("----------------- ApplockDBConstants.TABLE_CREATE -----------------");
     }
 
     @Override
