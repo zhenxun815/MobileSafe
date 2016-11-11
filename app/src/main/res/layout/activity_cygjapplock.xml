@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yiheng.mobilesafe.activity.CYGJAPPLockActivity">
+
+    <LinearLayout
+        style="@style/TitleBarStyle"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_cygj_applock_left"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:background="@drawable/btn_applock_left_blue"
+            android:text="未加锁"
+            android:textColor="#fff"
+            android:textSize="17sp"/>
+
+        <Button
+            android:id="@+id/btn_cygj_applock_right"
+            android:layout_width="80dp"
+            android:layout_height="36dp"
+            android:background="@drawable/btn_applock_right_white"
+            android:text="已加锁"
+            android:textColor="#0075FF"
+            android:textSize="17sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_cygj_applock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#a000"
+        android:padding="5dp"
+        android:text="未加锁(XX)"
+        android:textSize="15sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/pbr_cygj_applock"
+            layout="@layout/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible"/>
+
+        <ListView
+            android:id="@+id/lv_cygj_applock_unlocked"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"/>
+
+        <ListView
+            android:id="@+id/lv_cygj_applock_locked"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+
+</LinearLayout>

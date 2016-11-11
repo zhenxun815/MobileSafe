@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.yiheng.mobilesafe"
         minSdkVersion 21
-        targetSdkVersion 24
+        targetSdkVersion 21
         versionCode 2
         versionName "2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -39,7 +39,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'org.xutils:xutils:3.+'
+    compile 'org.xutils:xutils:3.3.36'
     //    compile 'org.xutils:xutils:3.3.36'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'

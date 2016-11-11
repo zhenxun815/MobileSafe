@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <TextView
+        style="@style/TitleBarStyle"
+        android:text="锁屏界面"/>
+    <ImageView
+        android:id="@+id/iv_cygj_screenlock_appicon"
+        android:layout_width="50dp"
+        android:layout_margin="15dp"
+        android:layout_height="50dp"
+        android:src="@drawable/icon"/>
+    <TextView
+        android:id="@+id/tv_cygj_screenlock_appname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/et_cygj_screenlock_psw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"/>
+    <Button
+        android:id="@+id/btn_cygj_screenlock_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="8dp"
+        android:text="确定"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:background="@drawable/dialog_btn_confirm_selector"/>
+
+</LinearLayout>

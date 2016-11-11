@@ -79,6 +79,23 @@
 
         <activity android:name=".activity.CYGJActivity">
         </activity>
+        <activity android:name=".activity.CYGJAPPLockActivity">
+        </activity>
+
+        <service
+            android:name=".service.Dog1Service"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".activity.CYGJLockScreenActivity">
+        </activity>
+
+        <service
+            android:name=".service.Dog2Service"
+            android:enabled="true"
+            android:exported="true">
+        </service>
     </application>
 
 </manifest>

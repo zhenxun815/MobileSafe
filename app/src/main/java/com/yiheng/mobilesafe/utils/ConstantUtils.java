@@ -48,4 +48,12 @@ public interface ConstantUtils {
      * 骚扰拦截:意图传递的拦截类型
      */
     String EXTRA_TYPE = "extra_type";
+    /**
+     * 解锁应用的广播action
+     */
+    String ACTION_APPUNLOCK = "com.itheima.mobilesafe.action.appunlock";
+    /**
+     * 程序锁数据库发生变化 通知的uri
+     */
+    String APPLOCK_DB_CHANGED = "content://applock/locklist";
 }

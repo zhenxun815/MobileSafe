@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+    android:padding="3dp">
+    <ImageView
+        android:id="@+id/iv_cygj_applock_appicon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:id="@+id/tv_cygj_applock_appname"
+        android:layout_toRightOf="@id/iv_cygj_applock_appicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="app名字"
+        android:layout_marginLeft="5dp"
+        android:layout_centerVertical="true"
+        android:textSize="20sp"
+        android:textColor="#000"/>
+    <ImageView
+        android:id="@+id/iv_cygj_applock_lock"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/applock_lock_selector"/>
+
+
+</RelativeLayout>
