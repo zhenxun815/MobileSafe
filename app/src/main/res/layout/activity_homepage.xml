@@ -18,7 +18,7 @@
             android:layout_height="100dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:src="@drawable/heima"/>
+            android:src="@drawable/icon"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
